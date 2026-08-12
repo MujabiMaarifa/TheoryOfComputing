@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Setup — Field Validator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <div class="card-head">
+    <div class="dots">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+    </div>
+    <h1>account_setup.form</h1>
+  </div>
+
+  <form id="signupForm" novalidate>
+
+    <div class="field" id="field-name">
+      <label for="name">full_name <span class="req">required</span></label>
+      <div class="input-wrap">
+        <input type="text" id="name" name="name" placeholder="Jane Wanjiru" autocomplete="name">
+        <span class="flag ok">✓</span>
+        <span class="flag err">✗</span>
+      </div>
+      <span class="hint" id="hint-name">Letters and spaces only, 2–50 characters.</span>
+    </div>
+
+    <div class="field" id="field-email">
+      <label for="email">email <span class="req">required</span></label>
+      <div class="input-wrap">
+        <input type="text" id="email" name="email" placeholder="jane@example.com" autocomplete="email">
+        <span class="flag ok">✓</span>
+        <span class="flag err">✗</span>
+      </div>
+      <span class="hint" id="hint-email">Standard format: name@domain.tld</span>
+    </div>
+
+    <div class="field" id="field-phone">
+      <label for="phone">phone <span class="req">required</span></label>
+      <div class="input-wrap">
+        <input type="text" id="phone" name="phone" placeholder="+254712345678" autocomplete="tel">
+        <span class="flag ok">✓</span>
+        <span class="flag err">✗</span>
+      </div>
+      <span class="hint" id="hint-phone">Country code + number, starts with '+', max 13 characters total.</span>
+    </div>
+
+    <div class="field" id="field-slug">
+      <label for="slug">profile_slug <span class="req">required</span></label>
+      <div class="input-wrap">
+        <input type="text" id="slug" name="slug" placeholder="jane-wanjiru" autocomplete="off">
+        <span class="flag ok">✓</span>
+        <span class="flag err">✗</span>
+      </div>
+      <span class="hint" id="hint-slug">Lowercase letters, numbers, single hyphens. No leading/trailing hyphen.</span>
+    </div>
+
+    <div class="field" id="field-pwd">
+      <label for="pwd">password <span class="req">required</span></label>
+      <div class="input-wrap">
+        <input type="password" id="pwd" name="pwd" placeholder="••••••••" autocomplete="new-password">
+        <span class="flag ok">✓</span>
+        <span class="flag err">✗</span>
+      </div>
+      <div class="strength" id="strength-bars">
+        <div class="strength-seg"></div>
+        <div class="strength-seg"></div>
+        <div class="strength-seg"></div>
+        <div class="strength-seg"></div>
+      </div>
+      <span class="hint" id="hint-pwd">8+ chars, upper &amp; lower case, a number, and a special character.</span>
+    </div>
+
+    <button type="submit" id="submitBtn" disabled>Create account</button>
+    <div class="status-line" id="statusLine">5 fields remaining</div>
+  </form>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
